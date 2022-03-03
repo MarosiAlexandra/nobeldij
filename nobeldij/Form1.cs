@@ -30,10 +30,24 @@ namespace nobeldij
                 MessageBox.Show("Hiba! az évszám nem megfelelő!");
                 return;
             }
-            StreamWriter sw = new StreamWriter("uj_dijazott.txt");
-            sw.WriteLine("Év;Név;SzületésHalálozás;Országkód");
-            sw.WriteLine(textBox1.Text + ";" + textBox2.Text + ";" + textBox3.Text + ";" + textBox4.Text + ";");
-            sw.Close();
+            try
+            {
+                StreamWriter sw = new StreamWriter("uj_dijazott.txt");
+                sw.WriteLine("Év;Név;SzületésHalálozás;Országkód");
+                sw.WriteLine(textBox1.Text + ";" + textBox2.Text + ";" + textBox3.Text + ";" + textBox4.Text + ";");
+                sw.Close();
+                MessageBox.Show("sikeres mentés");
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
         }
     }
 }
