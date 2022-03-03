@@ -42,10 +42,10 @@ namespace nobeldij
                 textBox3.Text = "";
                 textBox4.Text = "";
             }
-            catch (Exception)
+            catch (Exception error)
             {
 
-                throw;
+                MessageBox.Show("hiba az állomány irásában!\n{error.Message}");
             }
            
         }
