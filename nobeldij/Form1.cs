@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace nobeldij
 {
@@ -29,6 +30,10 @@ namespace nobeldij
                 MessageBox.Show("Hiba! az évszám nem megfelelő!");
                 return;
             }
+            StreamWriter sw = new StreamWriter("uj_dijazott.txt");
+            sw.WriteLine("Év;Név;SzületésHalálozás;Országkód");
+            sw.WriteLine(textBox1.Text + ";" + textBox2.Text + ";" + textBox3.Text + ";" + textBox4.Text + ";");
+            sw.Close();
         }
     }
 }
