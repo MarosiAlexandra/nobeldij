@@ -24,6 +24,11 @@ namespace nobeldij
                 MessageBox.Show("Töltsön ki minden mezőt!");
                 return;
             }
+            if (int.TryParse(textBox1.Text, out int év))
+            {
+                MessageBox.Show("Hiba! az évszám nem megfelelő!");
+                return;
+            }
         }
     }
 }
